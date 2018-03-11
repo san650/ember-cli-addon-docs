@@ -42,6 +42,10 @@ export function typeSignature([typed]) {
     signature = functionSignature(typed);
   }
 
+  if (typed.isStatic) {
+    signature = `static ${signature}`;
+  }
+
   return htmlSafe(signature);
 }
 
